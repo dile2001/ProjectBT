@@ -7,7 +7,7 @@ namespace RecloserAcq.Device
 {
     public enum eDeviceType
     {
-        CooperFxb, Nulec, TuBu, Recloser351R, Elster1700, Nulec_U, RecloserADVC, RecloserADVC45, RecloserUSeries, RecloserADVCTCPIP, RecloserVP
+        CooperFxb, Nulec, TuBu, Recloser351R, Elster1700, Nulec_U, RecloserADVC, RecloserADVC45, RecloserUSeries, RecloserADVCTCPIP, RecloserVP, LBS
     }
     public enum eAlertVal
     {
