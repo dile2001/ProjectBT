@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Request>
+    <Name>StartComm</Name>
+    <Text>00 05 00 00 01 FA</Text>
+    <DeviceType>CooperFxb</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>Current</Name>
+    <Text>00 05 20 01 04 D6</Text>
+    <DeviceType>CooperFxb</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>Status 1</Name>
+    <Text>00 05 20 0D 07 C7</Text>
+    <DeviceType>CooperFxb</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>Status 2</Name>
+    <Text>00 05 30 00 02 C9</Text>
+    <DeviceType>CooperFxb</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>Status 3</Name>
+    <Text>00 05 00 0C 02 ED</Text>
+    <DeviceType>CooperFxb</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <!--<Request>
+    <Name>StartComm</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 4F 53 0A 7E 0A 34 42 46 37 03</Text>
+    <DeviceType>Nulec</DeviceType>
+    <Used>true</Used>
+  </Request> maynot neccessary--> 
+    <Request>
+    <Name>Current</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 4D 41 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 42 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 43 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 45 23 0A 7E 0A 31 34 41 30 03 </Text>
+    <DeviceType>Nulec</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>Power</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 44 49 44 2D 32 38 31 0A 7E 0A 2A 0A 52 45 51 0A 44 49 44 2D 33 34 35 0A 7E 0A 2A 0A 52 45 51 0A 4B 57 23 0A 7E 0A 2A 0A 52 45 51 0A 50 57 46 54 23 0A 7E 0A 2A 0A 52 45 51 0A 46 53 35 30 36 30 0A 7E 0A 30 37 30 30 03 </Text>
+    <DeviceType>Nulec</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>Apparent Power</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 55 4F 46 31 32 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 4E 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 4B 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 52 23 0A 7E 0A 2A 0A 52 45 51 0A 55 31 0A 7E 0A 41 30 43 39 03 </Text>
+    <DeviceType>Nulec</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>Operation</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 4F 50 0A 7E 0A 2A 0A 52 45 51 0A 55 57 23 0A 7E 0A 2A 0A 52 45 51 0A 56 57 23 0A 7E 0A 2A 0A 52 45 51 0A 57 57 23 0A 7E 0A 31 39 43 32 03</Text>
+    <DeviceType>Nulec</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>Battery</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 4D 46 0A 7E 0A 2A 0A 52 45 51 0A 43 53 0A 7E 0A 2A 0A 52 45 51 0A 42 54 53 0A 7E 0A 2A 0A 52 45 51 0A 57 53 4F 53 54 4D 0A 7E 0A 2A 0A 52 45 51 0A 4D 49 4C 0A 7E 0A 39 39 34 34 03 </Text>
+    <DeviceType>Nulec</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>Battery Voltage</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 46 4F 0A 7E 0A 2A 0A 52 45 51 0A 43 46 0A 7E 0A 2A 0A 52 45 51 0A 43 4B 0A 7E 0A 2A 0A 52 45 51 0A 50 52 0A 7E 0A 2A 0A 52 45 51 0A 42 54 56 23 0A 7E 0A 36 41 34 45 03</Text>
+    <DeviceType>Nulec</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>Status</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 41 50 47 4F 41 0A 7E 0A 2A 0A 52 45 51 0A 41 50 47 41 4C 0A 7E 0A 2A 0A 52 45 51 0A 4F 53 0A 7E 0A 2A 0A 52 45 51 0A 53 56 0A 7E 0A 2A 0A 52 45 51 0A 43 42 0A 7E 0A 31 33 41 32 03</Text>
+    <DeviceType>Nulec</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>DateTime</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 43 4B 0A 7E 0A 2A 0A 52 45 51 0A 41 52 0A 7E 0A 2A 0A 52 45 51 0A 43 4C 0A 7E 0A 2A 0A 52 45 51 0A 45 45 0A 7E 0A 31 36 38 41 03 </Text>
+    <DeviceType>Nulec</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>Power</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 44 49 44 2D 32 38 31 0A 7E 0A 2A 0A 52 45 51 0A 44 49 44 2D 33 34 35 0A 7E 0A 2A 0A 52 45 51 0A 4B 57 23 0A 7E 0A 2A 0A 52 45 51 0A 50 57 46 54 23 0A 7E 0A 2A 0A 52 45 51 0A 46 53 35 30 36 30 0A 7E 0A 30 37 30 30 03 </Text>
+    <DeviceType>RecloserADVC45</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>Apparent Power</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 55 4F 46 31 32 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 4E 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 4B 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 52 23 0A 7E 0A 2A 0A 52 45 51 0A 55 31 0A 7E 0A 41 30 43 39 03 </Text>
+    <DeviceType>RecloserADVC45</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getStatus1</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 43 42 0A 7E 0A 41 44 43 46 03</Text>
+    <DeviceType>RecloserADVC45</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getAmp1</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 44 49 44 2D 35 33 37 0A 7E 0A 31 36 36 42 03</Text>
+    <DeviceType>RecloserADVC45</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getAmp2</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 4D 41 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 42 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 43 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 45 23 0A 7E 0A 31 34 41 30 03</Text>
+    <DeviceType>RecloserADVC45</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getpwnew</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 44 49 44 2D 32 38 31 0A 7E 0A 2A 0A 52 45 51 0A 44 49 44 2D 33 34 35 0A 7E 0A 2A 0A 52 45 51 0A 4B 57 23 0A 7E 0A 2A 0A 52 45 51 0A 50 57 46 54 23 0A 7E 0A 2A 0A 52 45 51 0A 46 53 35 30 36 30 0A 7E 0A 30 37 30 30 03</Text>
+    <DeviceType>RecloserADVC45</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getBateryvoltage</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 42 54 56 23 0A 7E 0A 2A 0A 52 45 51 0A 4E 46 53 0A 7E 0A 2A 0A 52 45 51 0A 49 50 0A 7E 0A 2A 0A 52 45 51 0A 53 4E 45 54 0A 7E 0A 2A 0A 52 45 51 0A 49 50 44 47 0A 7E  0A 45 32 44 39 03</Text>
+    <DeviceType>RecloserADVC45</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getTime</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 43 4B 0A 7E 0A 35 45 42 38 03</Text>
+    <DeviceType>RecloserADVC45</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>Operation</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 4F 50 0A 7E 0A 2A 0A 52 45 51 0A 55 57 23 0A 7E 0A 2A 0A 52 45 51 0A 56 57 23 0A 7E 0A 2A 0A 52 45 51 0A 57 57 23 0A 7E 0A 31 39 43 32 03</Text>
+    <DeviceType>RecloserADVC45</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getStatus1</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 43 42 0A 7E 0A 41 44 43 46 03</Text>
+    <DeviceType>RecloserADVC</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getAmp1</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 44 49 44 2D 35 33 37 0A 7E 0A 31 36 36 42 03</Text>
+    <DeviceType>RecloserADVC</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getStatus2</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 43 42 0A 7E 0A 41 44 43 46 03</Text>
+    <DeviceType>RecloserADVC</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getAmp2</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 4D 41 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 42 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 43 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 45 23 0A 7E 0A 31 34 41 30 03</Text>
+    <DeviceType>RecloserADVC</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getStatus3</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 43 42 0A 7E 0A 41 44 43 46 03</Text>
+    <DeviceType>RecloserADVC</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getpw1</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 44 49 44 2D 32 38 31 0A 7E 0A 31 35 34 43 03</Text>
+    <DeviceType>RecloserADVC</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getpw2</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 4B 57 41 23 0A 7E 0A 2A 0A 52 45 51 0A 4B 57 42 23 0A 7E 0A 2A 0A 52 45 51 0A 4B 57 43 23 0A 7E 0A 2A 0A 52 45 51 0A 50 57 46 54 41 23 0A 7E 0A 2A 0A 52 45 51 0A 50 57 46 54 42 23 0A 7E 0A 39 41 42 41 03</Text>
+    <DeviceType>RecloserADVC</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getpw3</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 50 57 46 54 43 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 4B 41 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 4B 42 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 4B 43 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 52 41 23 0A 7E 0A 33 43 33 31 03</Text>
+    <DeviceType>RecloserADVC</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getpw4</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 4D 52 42 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 52 43 23 0A 7E 0A 2A 0A 52 45 51 0A 4B 57 48 23 0A 7E 0A 2A 0A 52 45 51 0A 4B 57 48 46 23 0A 7E 0A 2A 0A 52 45 51 0A 4B 57 48 52 23 0A 7E 0A 39 35 37 43 03</Text>
+    <DeviceType>RecloserADVC</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getvoltage</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 41 37 0A 7E 0A 31 37 37 43 03</Text>
+    <DeviceType>RecloserADVC</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getStatus8</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 43 42 0A 7E 0A 41 44 43 46 03</Text>
+    <DeviceType>RecloserADVC</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getBateryvoltage</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 42 54 56 23 0A 7E 0A 2A 0A 52 45 51 0A 4E 46 53 0A 7E 0A 2A 0A 52 45 51 0A 49 50 0A 7E 0A 2A 0A 52 45 51 0A 53 4E 45 54 0A 7E 0A 2A 0A 52 45 51 0A 49 50 44 47 0A 7E  0A 45 32 44 39 03</Text>
+    <DeviceType>RecloserADVC</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getStatus9</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 43 42 0A 7E 0A 41 44 43 46 03</Text>
+    <DeviceType>RecloserADVC</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getTime</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 43 4B 0A 7E 0A 35 45 42 38 03</Text>
+    <DeviceType>RecloserADVC</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getStatus</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 43 42 0A 7E 0A 41 44 43 46 03</Text>
+    <DeviceType>RecloserADVC</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>Operation</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 4F 50 0A 7E 0A 2A 0A 52 45 51 0A 55 57 23 0A 7E 0A 2A 0A 52 45 51 0A 56 57 23 0A 7E 0A 2A 0A 52 45 51 0A 57 57 23 0A 7E 0A 31 39 43 32 03</Text>
+    <DeviceType>RecloserADVC</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getVol1</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 44 49 0A 7E 0A 2A 0A 52 45 51 0A 4D 44 56 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 45 56 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 46 56 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 47 56 23 0A 7E 0A 43 34 35 39 03</Text>
+    <DeviceType>RecloserADVC</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getVol1</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 44 49 0A 7E 0A 2A 0A 52 45 51 0A 4D 44 56 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 45 56 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 46 56 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 47 56 23 0A 7E 0A 43 34 35 39 03</Text>
+    <DeviceType>RecloserADVC45</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getVolsource</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 4D 41 56 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 42 56 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 43 56 23 0A 7E 0A 2A 0A 52 45 51 0A 4C 4C 23 0A 7E 0A 2A 0A 52 45 51 0A 42 4F 0A 7E 0A 38 37 32 37 03</Text>
+    <DeviceType>RecloserADVC45</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getVolsource</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 4D 41 56 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 42 56 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 43 56 23 0A 7E 0A 2A 0A 52 45 51 0A 4C 4C 23 0A 7E 0A 2A 0A 52 45 51 0A 42 4F 0A 7E 0A 38 37 32 37 03</Text>
+    <DeviceType>RecloserADVC</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>MET1x0D</Name>
+    <Text>4D 45 54 31 0D</Text>
+    <DeviceType>Recloser351R</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>SER 1x0D (status)</Name>
+    <Text>53 45 52 20 31 0D</Text>
+    <DeviceType>Recloser351R</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>DAT (get date)</Name>
+    <Text>44 41 54 0D</Text>
+    <DeviceType>Recloser351R</DeviceType>
+    <Used>false</Used>
+  </Request>
+  <Request>
+    <Name>TIM (get time)</Name>
+    <Text>54 49 4d 0D</Text>
+    <DeviceType>Recloser351R</DeviceType>
+    <Used>false</Used>
+  </Request>
+  <Request>
+    <Name>Current</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 4D 41 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 42 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 43 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 45 23 0A 7E 0A 31 34 41 30 03 </Text>
+    <DeviceType>RecloserUSeries</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>Operation</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 4F 50 0A 7E 0A 2A 0A 52 45 51 0A 55 57 0A 7E 0A 2A 0A 52 45 51 0A 56 57 0A 7E 0A 2A 0A 52 45 51 0A 57 57 0A 7E 0A 39 32 44 38 03</Text>
+    <DeviceType>RecloserUSeries</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getStatus</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 43 42 0A 7E 0A 41 44 43 46 03</Text>
+    <DeviceType>RecloserUSeries</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getAmp</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 4D 41 0A 7E 0A 2A 0A 52 45 51 0A 4D 42 0A 7E 0A 2A 0A 52 45 51 0A 4D 43 0A 7E 0A 2A 0A 52 45 51 0A 4D 45 0A 7E 0A 30 36 39 36 03</Text>
+    <DeviceType>RecloserUSeries</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getVoltABC</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 4D 41 56 0A 7E 0A 2A 0A 52 45 51 0A 4D 42 56 0A 7E 0A 2A 0A 52 45 51 0A 4D 43 56 0A 7E 0A 2A 0A 52 45 51 0A 4C 4C 0A 7E 0A 2A 0A 52 45 51 0A 42 4F 0A 7E 0A 33 35 42 31 03</Text>
+    <DeviceType>RecloserUSeries</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getVoltDEFG</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 44 49 0A 7E 0A 2A 0A 52 45 51 0A 4D 44 56 0A 7E 0A 2A 0A 52 45 51 0A 4D 45 56 0A 7E 0A 2A 0A 52 45 51 0A 4D 46 56 0A 7E 0A 2A 0A 52 45 51 0A 4D 47 56 0A 7E 0A 46 38 34 34 03</Text>
+    <DeviceType>RecloserUSeries</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getVoltHIJKL</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 4D 48 56 0A 7E 0A 2A 0A 52 45 51 0A 4D 49 56 0A 7E 0A 2A 0A 52 45 51 0A 4D 4A 56 0A 7E 0A 2A 0A 52 45 51 0A 4D 4B 56 0A 7E 0A 2A 0A 52 45 51 0A 4D 4C 56 0A 7E 0A 36 43 31 46 03</Text>
+    <DeviceType>RecloserUSeries</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getdatetime</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 43 4B 0A 7E 0A 2A 0A 52 45 51 0A 41 52 0A 7E 0A 2A 0A 52 45 51 0A 43 4C 0A 7E 0A 2A 0A 52 45 51 0A 45 45 0A 7E 0A 31 36 38 41 03</Text>
+    <DeviceType>RecloserUSeries</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getPower</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 44 49 44 2D 32 38 31 0A 7E 0A 2A 0A 52 45 51 0A 44 49 44 2D 33 34 35 0A 7E 0A 2A 0A 52 45 51 0A 4B 57 0A 7E 0A 2A 0A 52 45 51 0A 50 57 46 54 0A 7E 0A 2A 0A 52 45 51 0A 46 53 35 30 36 30 0A 7E 0A 30 42 42 34 03</Text>
+    <DeviceType>RecloserUSeries</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getpower2</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 55 4F 46 31 32 0A 7E 0A 2A 0A 52 45 51 0A 4D 4B 0A 7E 0A 2A 0A 52 45 51 0A 4D 52 0A 7E 0A 2A 0A 52 45 51 0A 55 31 0A 7E 0A 33 33 35 41 03</Text>
+    <DeviceType>RecloserUSeries</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getStatus1</Name>
+    <Text>00 17 00 12 1b 32 01 2a  0a 52 45 51 0a 43 42 0a 7e 0a 41 44 43 46 03</Text>
+    <DeviceType>RecloserADVCTCPIP</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getAmp2</Name>
+    <Text>00 3c 00 12 1b 32 01 2a 0a 52 45 51 0a 4d 41 23 0a 7e 0a 2a 0a 52 45 51 0a 4d 42 23 0a 7e 0a 2a 0a 52 45 51 0a 4d 43 23 0a 7e 0a 2a 0a 52 45 51 0a 4d 45 23 0a 7e 0a 31 34 41 30 03</Text>
+    <DeviceType>RecloserADVCTCPIP</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getpw2</Name>
+    <Text>00 51 00 12 1B 32 01 2A 0A 52 45 51 0A 4B 57 41 23 0A 7E 0A 2A 0A 52 45 51 0A 4B 57 42 23 0A 7E 0A 2A 0A 52 45 51 0A 4B 57 43 23 0A 7E 0A 2A 0A 52 45 51 0A 50 57 46 54 41 23 0A 7E 0A 2A 0A 52 45 51 0A 50 57 46 54 42 23 0A 7E 0A 39 41 42 41 03</Text>
+    <DeviceType>RecloserADVCTCPIP</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getpw3</Name>
+    <Text>00 4F 00 12 1B 32 01 2A 0A 52 45 51 0A 50 57 46 54 43 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 4B 41 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 4B 42 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 4B 43 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 52 41 23 0A 7E 0A 33 43 33 31 03</Text>
+    <DeviceType>RecloserADVCTCPIP</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getpw4</Name>
+    <Text>00 4F 00 12 1B 32 01 2A 0A 52 45 51 0A 4D 52 42 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 52 43 23 0A 7E 0A 2A 0A 52 45 51 0A 4B 57 48 23 0A 7E 0A 2A 0A 52 45 51 0A 4B 57 48 46 23 0A 7E 0A 2A 0A 52 45 51 0A 4B 57 48 52 23 0A 7E 0A 39 35 37 43 03</Text>
+    <DeviceType>RecloserADVCTCPIP</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getBateryvoltage</Name>
+    <Text>00 4a 00 12 1B 32 01 2A 0A 52 45 51 0A 42 54 56 23 0A 7E 0A 2A 0A 52 45 51 0A 4E 46 53 0A 7E 0A 2A 0A 52 45 51 0A 49 50 0A 7E 0A 2A 0A 52 45 51 0A 53 4E 45 54 0A 7E 0A 2A 0A 52 45 51 0A 49 50 44 47 0A 7E  0A 45 32 44 39 03</Text>
+    <DeviceType>RecloserADVCTCPIP</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getTime</Name>
+    <Text>00 17 00 12 1B 32 01 2A 0A 52 45 51 0A 43 4B 0A 7E 0A 35 45 42 38 03</Text>
+    <DeviceType>RecloserADVCTCPIP</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getStatus</Name>
+    <Text>00 17 00 12 1b 32 01 2a  0a 52 45 51 0a 43 42 0a 7e 0a 41 44 43 46 03</Text>
+    <DeviceType>RecloserADVCTCPIP</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>Operation</Name>
+    <Text>00 3B 00 12 1B 32 01 2A 0A 52 45 51 0A 4F 50 0A 7E 0A 2A 0A 52 45 51 0A 55 57 23 0A 7E 0A 2A 0A 52 45 51 0A 56 57 23 0A 7E 0A 2A 0A 52 45 51 0A 57 57 23 0A 7E 0A 31 39 43 32 03</Text>
+    <DeviceType>RecloserADVCTCPIP</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getVol1</Name>
+    <Text>00 4B 00 12 1B 32 01 2A 0A 52 45 51 0A 44 49 0A 7E 0A 2A 0A 52 45 51 0A 4D 44 56 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 45 56 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 46 56 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 47 56 23 0A 7E 0A 43 34 35 39 03</Text>
+    <DeviceType>RecloserADVCTCPIP</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getVolsource</Name>
+    <Text>00 4A 00 12 1B 32 01 2A 0A 52 45 51 0A 4D 41 56 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 42 56 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 43 56 23 0A 7E 0A 2A 0A 52 45 51 0A 4C 4C 23 0A 7E 0A 2A 0A 52 45 51 0A 42 4F 0A 7E 0A 38 37 32 37 03</Text>
+    <DeviceType>RecloserADVCTCPIP</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getAmp1</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 44 49 44 2D 35 33 37 0A 7E 0A 31 36 36 42 03</Text>
+    <DeviceType>RecloserVP</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getAmp2</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 4D 41 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 42 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 43 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 45 23 0A 7E 0A 31 34 41 30 03</Text>
+    <DeviceType>RecloserVP</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getpw1</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 44 49 44 2D 32 38 31 0A 7E 0A 31 35 34 43 03</Text>
+    <DeviceType>RecloserVP</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getpw2</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 4B 57 41 23 0A 7E 0A 2A 0A 52 45 51 0A 4B 57 42 23 0A 7E 0A 2A 0A 52 45 51 0A 4B 57 43 23 0A 7E 0A 2A 0A 52 45 51 0A 50 57 46 54 41 23 0A 7E 0A 2A 0A 52 45 51 0A 50 57 46 54 42 23 0A 7E 0A 39 41 42 41 03</Text>
+    <DeviceType>RecloserVP</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getpw3</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 50 57 46 54 43 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 4B 41 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 4B 42 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 4B 43 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 52 41 23 0A 7E 0A 33 43 33 31 03</Text>
+    <DeviceType>RecloserVP</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getpw4</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 4D 52 42 23 0A 7E 0A 2A 0A 52 45 51 0A 4D 52 43 23 0A 7E 0A 2A 0A 52 45 51 0A 4B 57 48 23 0A 7E 0A 2A 0A 52 45 51 0A 4B 57 48 46 23 0A 7E 0A 2A 0A 52 45 51 0A 4B 57 48 52 23 0A 7E 0A 39 35 37 43 03</Text>
+    <DeviceType>RecloserVP</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getvoltage</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 41 37 0A 7E 0A 31 37 37 43 03</Text>
+    <DeviceType>RecloserVP</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getBateryvoltage</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 42 54 56 23 0A 7E 0A 2A 0A 52 45 51 0A 4E 46 53 0A 7E 0A 2A 0A 52 45 51 0A 49 50 0A 7E 0A 2A 0A 52 45 51 0A 53 4E 45 54 0A 7E 0A 2A 0A 52 45 51 0A 49 50 44 47 0A 7E  0A 45 32 44 39 03</Text>
+    <DeviceType>RecloserVP</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getTime</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 43 4B 0A 7E 0A 35 45 42 38 03</Text>
+    <DeviceType>RecloserVP</DeviceType>
+    <Used>true</Used>
+  </Request>
+  <Request>
+    <Name>getStatus</Name>
+    <Text>1B 32 01 2A 0A 52 45 51 0A 43 42 0A 7E 0A 41 44 43 46 03</Text>
+    <DeviceType>RecloserVP</DeviceType>
+    <Used>true</Used>
+  </Request>
+
+</ArrayOfRequest>
