@@ -1,4 +1,4 @@
-﻿
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,8 +29,7 @@ namespace RecloserAcq
         public int GroupID = -1;
         private List<RecloserBase> _list;
         private DateTime? _lastPollTime;
-        //private int _counter;
-        //private int _saveCounter;
+       
         
 
         SoundPlayer _sndPlayer;        
@@ -157,11 +156,14 @@ namespace RecloserAcq
         public bool testNmax = false;
         public bool testCmax = false;
         #region Event handlers
-        
+        System.Timers.Timer tmplay; 
         private void frmDeviceStatus_Load(object sender, EventArgs e)
         {
             SetBtnPermission();
-            
+            tmplay = new System.Timers.Timer(3000);
+
+            tmplay.Elapsed += new ElapsedEventHandler(OnTimePlayEvent);
+            tmplay.Enabled = false;
             
             //ValidatePassword vp = new ValidatePassword(false);
 
@@ -255,9 +257,13 @@ namespace RecloserAcq
             {
                 recloserADVCToolStripMenuItem.Checked = false;
             }
+            if (_list.OfType<LBS>().Count() == 0)
+            {
+                recloserNew2ToolStripMenuItem.Checked = false;
+            }
             comLogToolStripMenuItem.Checked = false;
             recloserNew1ToolStripMenuItem.Checked = false;
-            recloserNew2ToolStripMenuItem.Checked = false;
+            
             /*if (_formprop != null)
             {
                 splitContainer1.SplitterDistance = _formprop.DistanceSplit1;
@@ -308,6 +314,7 @@ namespace RecloserAcq
             elsterbindingsource.DataSource = _list.OfType<Elster1700>();
             Recloser351RbindingSource.DataSource = _list.OfType<Recloser351R>();
             dgvBindingSource.DataSource = _list.OfType<RecloserADVC>();
+            lBSBindingSource.DataSource = _list.OfType<LBS>();
         }
         //private string fileconfig;
         private void frmDeviceStatus_FormClosing(object sender, FormClosingEventArgs e)
@@ -663,20 +670,16 @@ namespace RecloserAcq
             }
         }
 
-        private void SetAlertRecloser(RecloserBase sender, UltraGrid grd)
+        private void SetAlertRecloser(RecloserBase rec, UltraGrid grd)
         {
             try
             {
-                var recloser = sender as CooperFXB;
-                if (recloser.DisableAlert)
-                    return;
-                var row = grd.Rows.Where(r => r.ListObject == recloser).FirstOrDefault();
-                if (row == null) return;
-                //UltraGridCell cell = row.Cells[e.PropertyName];
-                //int? v = nl.GetInternalValue(e.PropertyName);
-                //cell = row.Cells[e.PropertyName];
 
-                if (recloser.Alert == true)
+                if (rec.DisableAlert)
+                    return;
+                var row = grd.Rows.Where(r => r.ListObject == rec).FirstOrDefault();
+                if (row == null) return;
+                if (rec.Alert == true)
                 {
                     row.Appearance.ForeColor = Color.Red;
                     PlayAlertSound();
@@ -882,22 +885,23 @@ namespace RecloserAcq
             {
                 if (e.PropertyName == "AlertVal")
                 {
-                    
+
+
                     if (sender is Nulec)
                     {
-                        SetAlertNulec(sender);
+                        SetAlertRecloser((Nulec)sender, grdNulec);
                     }
                     if (sender is CooperFXB)
                     {
-                        SetAlertCooperFXB(sender);
+                        SetAlertRecloser((CooperFXB)sender, grdCooper);
                     }
                     if (sender is Recloser351R)
                     {
-                        SetAlertRecloser351R(sender);
+                        SetAlertRecloser((Recloser351R)sender, recloser351RListCtrl1);
                     }
-                    if(sender is RecloserADVC)
+                    if (sender is RecloserADVC)
                     {
-                        SetAlertRecloserADVC(sender);
+                        SetAlertRecloser((RecloserADVC)sender, dgvrecloserAdvc);
                     }
                     curalertRecloser = (RecloserBase)sender;
                     
@@ -1063,9 +1067,36 @@ namespace RecloserAcq
             _sndPlayer.Load();
             _sndPlayer.Play();
         }
+        private void OnTimePlayEvent(object source, ElapsedEventArgs e)
+        {
+            if ((DateTime.Now - dtstartplay).TotalSeconds >= RecloserAcq.Properties.Settings.Default.soundduration && playcount<=0 )
+            {
+                tmplay.Enabled = false;
+                tmplay.Stop();
+                _sndPlayer.Stop();
+                _isPlaying = false;
+            }
+            else
+            {
+                playcount--;
+                PlayFile();
+            }
+        }
+        private void PlayFile()
+        {
+            //if (_isPlaying == true) { return; }
+            if (_enablealert)
+            {
+                _sndPlayer.Play();
+
+            }
+        }
+        DateTime dtstartplay;
+        int playcount;
         private void PlayAlertSound()
         {
-            
+            dtstartplay = DateTime.Now;
+            playcount = RecloserAcq.Properties.Settings.Default.playcount;
             if(_isPlaying==true)
             {return;}
 
@@ -1079,9 +1110,9 @@ namespace RecloserAcq
                 try
                 {
                     _sndPlayer.SoundLocation = file;
-                    _sndPlayer.Load();
-                    _isPlaying = true;
-                    _sndPlayer.Play();
+                    PlayFile();
+                    tmplay.Enabled = true;
+                    tmplay.Start();
 
 
                 }
@@ -1601,12 +1632,7 @@ namespace RecloserAcq
             rc.PowerFactor = 2;
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            int i = grdNulec.ActiveRow.Band.Index;
-            Nulec rc = (Nulec)nulecBindingSource.Current;
-            rc.PowerFactor = -2;
-        }
+       
 
         private void btnauto_Click(object sender, EventArgs e)
         {
@@ -2147,8 +2173,12 @@ namespace RecloserAcq
             }
             else
             {
-                splitContainer3.Panel2.Show();
+                
+                splitContainer1.Panel2Collapsed = false;
+                splitContainer1.Panel2.Show();
                 splitContainer3.Panel2Collapsed = false;
+                splitContainer3.Panel2.Show();
+
             }
         }
 
@@ -2310,7 +2340,44 @@ namespace RecloserAcq
 
             }
         }
+        private void OpenLBSEvent()
+        {
+            if (RecloserAcq.Device.DeviceStatic.IsPasswordValidated("lbs") == false)
+                return;
+            LBS rc = (LBS)lBSBindingSource.Current;
+            if (Validate_SendCommand(rc.Location + " " + rc.Name, "Open") == true)
+            {
 
+                rc.CommandOpen(false);
+                int userid = Program.user.id;
+                string username = Program.user.name;
+                int deviceid = rc.Id;
+                string devicename = rc.Name;
+                string groupname = rc.GroupName;
+                DeviceStatic.LogOperation(userid, username, deviceid, devicename, groupname, 1, false);//0:close,1:open
+
+
+            }
+        }
+        private void CloseLBSEvent()
+        {
+            if (RecloserAcq.Device.DeviceStatic.IsPasswordValidated("lbs") == false)
+                return;
+            LBS rc = (LBS)lBSBindingSource.Current;
+            if (Validate_SendCommand(rc.Location + " " + rc.Name, "Close") == true)
+            {
+
+                rc.CommandClose(false);
+                int userid = Program.user.id;
+                string username = Program.user.name;
+                int deviceid = rc.Id;
+                string devicename = rc.Name;
+                string groupname = rc.GroupName;
+                DeviceStatic.LogOperation(userid, username, deviceid, devicename, groupname, 0, false);//0:close,1:open
+
+
+            }
+        }
         private void recloserAdvccloseToolStrip_Click(object sender, EventArgs e)
         {
             CloseRecloserADVCEvent();
@@ -2355,6 +2422,7 @@ namespace RecloserAcq
             if (stopAlertToolStripMenuItem1.Text == "Stop Alert")
             {
                 stopAlertToolStripMenuItem1.Text = "Enable Alert";
+                _enablealert = false;
                 bmessage = false;
                 if (curalertRecloser != null)
                 {
@@ -2372,6 +2440,7 @@ namespace RecloserAcq
             else
             {
                 stopAlertToolStripMenuItem1.Text = "Stop Alert";
+                _enablealert = true;
                 foreach (RecloserBase rb in _list)
                 {
                     rb.DisableAlert = false;
@@ -2651,6 +2720,69 @@ namespace RecloserAcq
 
            
 
+        }
+
+        private void lbsToolstrip_open_Click(object sender, EventArgs e)
+        {
+            OpenLBSEvent();
+        }
+
+        private void lbsToolstrip_close_Click(object sender, EventArgs e)
+        {
+            CloseLBSEvent();
+        }
+
+        private void btnOpenLBS_Click(object sender, EventArgs e)
+        {
+            OpenLBSEvent();
+        }
+
+        private void btnCloseLBS_Click(object sender, EventArgs e)
+        {
+            CloseLBSEvent();
+        }
+
+        private void btnPollLBS_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                LBS rec = (LBS)lBSBindingSource.Current;
+                if (btnPollLBS.Text == "End Poll")
+                {
+                    btnPollLBS.Text = "Start Poll";
+
+                    rec.StopPolling();
+                    rec.Listener.StopListening();
+                    rec.Listener.ReceiveBuffer.Flush();
+
+                }
+                else
+                {
+                    btnPollLBS.Text = "End Poll";
+                    rec.Listener.StartListening();
+                    rec.Listener.ReceiveBuffer.Reset();
+                    rec.StartPoll();
+                }
+            }
+            catch (Exception ex)
+            {
+                LogService.WriteInfo("LBS Start-End poll button click", ex.ToString());
+            }
+        }
+
+        private void btnSynLBS_Click(object sender, EventArgs e)
+        {
+            
+            LBS rc = (LBS)lBSBindingSource.Current;
+            
+            if (RecloserAcq.Device.DeviceStatic.IsPasswordValidated("lbs") == false)
+                return;
+            if (Validate_SendCommand(rc.Location, "Syn Time") == true)
+            {
+
+                rc.SetTime();
+
+            }
         }
         
     }
